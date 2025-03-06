@@ -1,0 +1,42 @@
+# 🔹 Ignorowanie plików checkpoint Jupyter
+.ipynb_checkpoints/
+
+# 🔹 Ignorowanie folderów Python Cache
+__pycache__/
+*.py[cod]
+
+# 🔹 Ignorowanie plików systemowych
+.DS_Store
+Thumbs.db
+
+# 🔹 Ignorowanie danych wrażliwych i konfiguracji
+*.env
+secrets.json
+config.json
+
+# 🔹 Ignorowanie plików tymczasowych i logów
+*.log
+*.sqlite3
+*.tmp
+
+# 🔹 Ignorowanie zapisanych modeli (plików wag)
+*.tflite
+*.onnx
+
+# 🔹 Ignorowanie plików danych (duże pliki CSV, pickle, itd.)
+data/
+*.parquet
+*.pkl
+*.csv
+*.tsv
+*.json
+
+# 🔹 Ignorowanie plików wynikowych TensorFlow/Keras
+checkpoint
+*.ckpt
+events.out.tfevents.*
+
+# 🔹 Ignorowanie środowiska wirtualnego
+venv/
+.env/
+.venv/
