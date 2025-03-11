@@ -7,40 +7,39 @@
 ##Struktura katalogów
 
     
-    │── Fashion_Mnist.ipynb                     # Główny notebook Jupyter z kodem modelu
-    │── predict_interface.ipynb                  # Notebook do testowania predykcji
-    │── model_fashion_mnist.h5                    # Pierwszy zapisany model (bez augmentacji)
-    │── model_fashion_mnist_augmented.h5          # Model po pierwszej augmentacji
-    │── model_fashion_mnist_augmented_final.h5    # Model po dalszym tuningu
-    │── model_fashion_mnist_augmented_final2.h5   # Model z kolejnymi poprawkami
-    │── model_fashion_mnist_augmented_final5.h5   # Ostateczny model spełniający wymagania
-    │── README.md                                 # Dokumentacja projektu
-      
+│── Fashion_Mnist.ipynb                   # Główny notebook Jupyter z kodem modelu
+│── fashion_data.npz                       # Zbiór danych Fashion-MNIST
+│── model_fashion_mnist_v2.keras           # Druga wersja modelu
+│── model_augmented_v1.keras               # Model po pierwszej augmentacji
+│── model_augmented_v2.keras               # Model po dalszym tuningu
+│── model_augmented_v4.keras               # Ostateczna wersja modelu
+│── README.md                               # Dokumentacja projektu
+
 
 ##Opis plików
 
     Fashion_Mnist.ipynb – główny notebook, w którym trenowano model.
-    predict_interface.ipynb – notebook testujący predykcje modelu.
-    model_fashion_mnist.h5 – pierwszy zapisany model (podstawowy).
-    model_fashion_mnist_augmented.h5 – model po augmentacji danych.
-    model_fashion_mnist_augmented_final.h5 – lepszy model po tuningu.
-    model_fashion_mnist_augmented_final2.h5 – kolejna wersja modelu.
-    model_fashion_mnist_augmented_final5.h5 – ostateczna wersja modelu, która spełnia wymagania accuracy > 0.94.
-    README.md – dokumentacja projektu.
-
-##Etapy realizacji
+    fashion_data.npz – zapisany zestaw danych Fashion-MNIST.
+    model_fashion_mnist_v2.keras – drugi zapisany model, ulepszony w stosunku do podstawowej wersji.
+    model_augmented_v1.keras – model po pierwszej augmentacji danych.
+    model_augmented_v2.keras – ulepszona wersja modelu po dalszym tuningu.
+    model_augmented_v4.keras – ostateczna wersja modelu, który osiągnął najlepszy balans między generalizacją a dokładnością.
+    README.md – dokumentacja projektu
+    ##Etapy realizacji
 
 1️⃣ Trening modelu CNN
 
     Model został wytrenowany na zbiorze Fashion-MNIST z podziałem 90%/10% (train/test).
-    Osiągnął test accuracy 91.58%.
+
 
 2️⃣ Zapisanie modelu i stworzenie interfejsu predykcji
 
-    Model zapisano w formacie HDF5 (.h5), a interfejs pozwala wizualizować prognozy.
+    Modele zapisano w formacie Keras (.keras), umożliwiając łatwe ponowne użycie.
+    Przetestowano predykcję modeli na nowych danych.
 
 3️⃣ Augmentacja danych i optymalizacja
 
-    Zastosowano techniki augmentacji do poprawienia generalizacji modelu.
-    Po tuningu model osiągnął 99.78% dokładności walidacyjnej.
-    Finalny model final5 spełnia warunki zadania.
+    Zastosowano zaawansowane techniki augmentacji (CutMix, MixUp,ElasticTransform), aby poprawić generalizację.
+    Najlepszy model osiągnął dokładność walidacyjną 94.62% i testową 92.47%.
+    Model augmented_v2 wykazał najlepszą generalizację i spełnia warunki zadania.
+
